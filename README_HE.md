@@ -9,8 +9,8 @@
 <div align="center">
 
 📖 [תיעוד](https://ai16z.github.io/eliza/) | 🎯 [דוגמאות](https://github.com/thejoven/awesome-eliza)
-</div>
 
+</div>
 
 <div align="center">
 
@@ -22,15 +22,15 @@
 
 ## ✨ תכונות
 
--   🛠️ מחברים מלאים לדיסקורד, טוויטר וטלגרם
--   🔗 תמיכה בכל מודל (Llama, Grok, OpenAI, Anthropic, וכו')
--   👥 תמיכה בריבוי סוכנים וחדרים
--   📚 קל לשלב ולהשתמש במסמכים שלך
--   💾 זיכרון ומאגר מסמכים הניתנים לשליפה
--   🚀 ניתן להרחבה רבה - יצירת פעולות ולקוחות משלך
--   ☁️ תומך בהרבה מודלים (local Llama, OpenAI, Anthropic, Groq ,
-וכו')
--   📦 פשוט עובד!
+- 🛠️ מחברים מלאים לדיסקורד, טוויטר וטלגרם
+- 🔗 תמיכה בכל מודל (Llama, Grok, OpenAI, Anthropic, וכו')
+- 👥 תמיכה בריבוי סוכנים וחדרים
+- 📚 קל לשלב ולהשתמש במסמכים שלך
+- 💾 זיכרון ומאגר מסמכים הניתנים לשליפה
+- 🚀 ניתן להרחבה רבה - יצירת פעולות ולקוחות משלך
+- ☁️ תומך בהרבה מודלים (local Llama, OpenAI, Anthropic, Groq ,
+  וכו')
+- 📦 פשוט עובד!
 
 </div>
 
@@ -62,7 +62,7 @@
 
 [Node.js 23+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) -
 
-[pnpm](https://pnpm.io/installation) -
+[npm](https://npm.io/installation) -
 
 > **הערה למשתמשי Windows:** נדרש [WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install-manual)
 
@@ -77,15 +77,15 @@ git clone https://github.com/ai16z/eliza-starter.git
 
 cp .env.example .env
 
-pnpm i && pnpm start
+npm i && npm start
 ```
 
 </div>
 
-
 לאחר מכן קרא את [התיעוד](https://ai16z.github.io/eliza/) כדי ללמוד כיצד להתאים את אלייזה.
 
 ### התחלה ידנית של אלייזה (מומלץ רק למי שיודע מה הוא עושה)
+
 <div align="right">
 
 ```
@@ -95,6 +95,7 @@ git clone https://github.com/ai16z/eliza.git
 # מעבר לגרסה האחרונה
 git checkout $(git describe --tags --abbrev=0)
 ```
+
 </div>
 
 ### התחלת אלייזה עם Gitpod
@@ -136,23 +137,26 @@ sh scripts/start.sh
 1. פתח את `agent/src/character.ts` כדי לשנות את דמות ברירת המחדל. בטל הערה וערוך.
 
 2. לטעינת דמויות מותאמות אישית:
-    - השתמש ב-`pnpm start --characters="path/to/your/character.json"`
+
+    - השתמש ב-`npm start --characters="path/to/your/character.json"`
     - ניתן לטעון מספר קבצי דמויות בו זמנית.
 
 3. התחבר עם X (טוויטר):
     - שנה `"clients": []` ל-`"clients": ["twitter"]` בקובץ הדמות כדי להתחבר ל-X.
 
 ### התחלה ידנית של אלייזה
+
 <div align="right">
 
 ```bash
-pnpm i
-pnpm build
-pnpm start
+npm i
+npm build
+npm start
 
 # לעיתים צריך לנקות את הפרויקט אם חוזרים אליו לאחר זמן
-pnpm clean
+npm clean
 ```
+
 </div>
 
 #### דרישות נוספות
@@ -160,7 +164,7 @@ pnpm clean
 ייתכן שתצטרך להתקין את Sharp. אם אתה רואה שגיאה בעת ההפעלה, נסה להתקין עם הפקודה הבאה:
 
 ```
-pnpm install --include=optional sharp
+npm install --include=optional sharp
 ```
 
 ### קהילה ויצירת קשר
@@ -170,6 +174,7 @@ pnpm install --include=optional sharp
 [GitHub Issues](https://github.com/ai16z/eliza/issues) מתאים ביותר עבור: באגים ופרופוזיציות לתכונות -
 
 [Discord](https://discord.gg/ai16z) מתאים ביותר עבור: שיתוף היישומים שלך והשתתפות בקהילה -
+
 </div>
 
 ## תורמים

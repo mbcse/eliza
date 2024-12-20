@@ -12,36 +12,36 @@ jobs:
         steps:
             - uses: actions/checkout@v4
 
-            - uses: pnpm/action-setup@v3
+            - uses: npm/action-setup@v3
               with:
                   version: 9.4.0
 
             - uses: actions/setup-node@v4
               with:
                   node-version: "23"
-                  cache: "pnpm"
+                  cache: "npm"
 
             - name: Run smoke tests
-              run: pnpm run smokeTests
+              run: npm run smokeTests
     integration-tests:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
 
-            - uses: pnpm/action-setup@v3
+            - uses: npm/action-setup@v3
               with:
                   version: 9.4.0
 
             - uses: actions/setup-node@v4
               with:
                   node-version: "23"
-                  cache: "pnpm"
+                  cache: "npm"
 
             - name: Install dependencies
-              run: pnpm install -r
+              run: npm install -r
 
             - name: Build packages
-              run: pnpm build
+              run: npm build
 
             - name: Run integration tests
               env:
@@ -51,5 +51,5 @@ jobs:
                     echo "Skipping integration tests due to missing required API keys"
                     exit 1
                   else
-                    pnpm run integrationTests
+                    npm run integrationTests
                   fi

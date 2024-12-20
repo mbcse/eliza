@@ -89,5 +89,5 @@ The plugin contains tests. Whether you're using **TDD** or not, please make sure
 Navigate to the `plugin-evm` directory and run:
 
 ```bash
-pnpm test
+npm test
 ```

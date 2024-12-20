@@ -25,7 +25,7 @@ Que pouvez-vous faire avec Eliza?
 
 - [Node.js 22+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - installation Nodejs
-- [pnpm](https://pnpm.io/installation)
+- [npm](https://npm.io/installation)
 - travailler avec PNPM
 
 ### éditer le fichier.env
@@ -41,8 +41,8 @@ Que pouvez-vous faire avec Eliza?
 Après avoir terminé la configuration des fichiers de compte et de rôle, lancez votre bot en tapant la ligne de commande suivante:
 
 ```
-pnpm i
-pnpm start
+npm i
+npm start
 ```
 
 # personnalisez votre Eliza
@@ -66,7 +66,7 @@ Vous pouvez exécuter le modèle OpenAI en définissant la variable d’environn
 Vous devrez peut-être installer Sharp. Si vous voyez une erreur au démarrage, essayez d’installer avec la commande suivante:
 
 ```
-pnpm install --include=optional sharp
+npm install --include=optional sharp
 ```
 
 # paramètres de l’environnement
@@ -136,7 +136,7 @@ TOGETHER_API_KEY=
 Si vous avez une carte graphique nvidia haute performance, vous pouvez faire l’accélération locale avec la ligne de commande suivante CUDA
 
 ```
-pnpm install
+npm install
 npx --no node-llama-cpp source download --gpu cuda
 ```
 
@@ -158,15 +158,15 @@ Pour savoir comment configurer votre bot discord, vous pouvez consulter la docum
 Ligne de commande pour plusieurs méthodes de test:
 
 ```bash
-pnpm test           # Run tests once
-pnpm test:watch    # Run tests in watch mode
+npm test           # Run tests once
+npm test:watch    # Run tests in watch mode
 ```
 
 Pour les tests spécifiques à la base de données:
 
 ```bash
-pnpm test:sqlite   # Run tests with SQLite
-pnpm test:sqljs    # Run tests with SQL.js
+npm test:sqlite   # Run tests with SQLite
+npm test:sqljs    # Run tests with SQL.js
 ```
 
 Les tests sont écrits en Jest et se trouvent dans le fichier SRC /\*_/_.test.ts. L’environnement de test est configuré comme suit:

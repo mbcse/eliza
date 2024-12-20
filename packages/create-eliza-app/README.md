@@ -20,8 +20,8 @@ You can create a new ELIZA app with your preferred package manager:
 # npm
 npx create-eliza-app@latest path
 
-# pnpm
-pnpm dlx create-eliza-app@latest path
+# npm
+npm dlx create-eliza-app@latest path
 
 # bun
 bunx create-eliza-app@latest path
@@ -34,9 +34,9 @@ deno run -A npm:create-eliza-app@latest path
 
 ## Command Line Arguments
 
--   `--name`: Name of the template to use (default: "eliza")
--   `--dir`: Directory where the project will be created (default: current directory)
--   `--registry`: Custom registry URL for templates
+- `--name`: Name of the template to use (default: "eliza")
+- `--dir`: Directory where the project will be created (default: current directory)
+- `--registry`: Custom registry URL for templates
 
 ## Getting Started
 
@@ -57,12 +57,12 @@ Once your project is created:
 3. Install dependencies:
 
     ```bash
-    pnpm install
+    npm install
     ```
 
 4. Start the development server:
     ```bash
-    pnpm start
+    npm start
     ```
 
 <!-- automd:with-automd -->

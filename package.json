@@ -1,23 +1,23 @@
 {
     "name": "eliza",
     "scripts": {
-        "preinstall": "npx only-allow pnpm",
-        "build": "turbo run build --filter=!eliza-docs",
+        "preinstall": "npx only-allow npm",
+        "build": "turbo run build",
         "build-docker": "turbo run build",
-        "start": "pnpm --filter \"@ai16z/agent\" start --isRoot",
-        "start:client": "pnpm --dir client dev",
-        "start:debug": "cross-env NODE_ENV=development VERBOSE=true DEBUG=eliza:* pnpm --filter \"@ai16z/agent\" start --isRoot",
+        "start": "npm run start --workspace=@ai16z/agent isRoot -- ",
+        "start:client": "npm run dev --workspace=@ai16z/client",
+        "start:debug": "cross-env NODE_ENV=development VERBOSE=true DEBUG=eliza:* npm --filter \"@ai16z/agent\" start --isRoot",
         "dev": "bash ./scripts/dev.sh",
         "lint": "bash ./scripts/lint.sh",
         "prettier-check": "npx prettier --check --cache .",
         "prettier": "npx prettier --write --cache .",
-        "release": "pnpm build && pnpm prettier && npx lerna publish --no-private --force-publish",
+        "release": "npm build && npm prettier && npx lerna publish --no-private --force-publish",
         "clean": "bash ./scripts/clean.sh",
         "docker:build": "bash ./scripts/docker.sh build",
         "docker:run": "bash ./scripts/docker.sh run",
         "docker:bash": "bash ./scripts/docker.sh bash",
         "docker:start": "bash ./scripts/docker.sh start",
-        "docker": "pnpm docker:build && pnpm docker:run && pnpm docker:bash",
+        "docker": "npm docker:build && npm docker:run && npm docker:bash",
         "test": "bash ./scripts/test.sh",
         "smokeTests": "bash ./scripts/smokeTests.sh",
         "integrationTests": "bash ./scripts/integrationTests.sh"
@@ -43,7 +43,7 @@
         "vitest": "2.1.5",
         "zx": "^8.2.4"
     },
-    "pnpm": {
+    "npm": {
         "overrides": {
             "onnxruntime-node": "1.20.1"
         }
@@ -60,12 +60,16 @@
         "csv-parse": "5.6.0",
         "ollama-ai-provider": "0.16.1",
         "optional": "0.1.4",
-        "pnpm": "9.14.4",
+        "npm": "10.5.0",
         "sharp": "0.33.5",
         "tslog": "4.9.3"
     },
-    "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
+    "packageManager": "npm@10.5.0+sha512.123c70bdf87d627595536c80e45ce860b4d6e76bf11c2cfe307ace160f4273c205805ffa7f90063c0bdbe564dacb90c850fd4d21f37754167470b9463b462cf8",
     "workspaces": [
-        "packages/*"
+        "docs",
+        "packages/*",
+        "client",
+        "web-agent",
+        "agent"
     ]
 }

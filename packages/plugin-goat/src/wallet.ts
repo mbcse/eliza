@@ -10,8 +10,7 @@ export const chain = base;
 
 export function getWalletClient(
     getSetting: (key: string) => string | undefined
-) {
-    const privateKey = getSetting("EVM_PRIVATE_KEY");
+): WalletClient | null {
     if (!privateKey) return null;
 
     const provider = getSetting("EVM_PROVIDER_URL");

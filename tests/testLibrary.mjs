@@ -18,12 +18,12 @@ async function runProcess(command, args = [], directory = projectRoot()) {
 
 async function installProjectDependencies() {
     console.log(chalk.blue('Installing dependencies...'));
-    return await runProcess('pnpm', ['install', '-r']);
+    return await runProcess('npm', ['install', '-r']);
 }
 
 async function buildProject() {
     console.log(chalk.blue('Building project...'));
-    return await runProcess('pnpm', ['build']);
+    return await runProcess('npm', ['build']);
 }
 
 async function writeEnvFile(entries) {
@@ -35,7 +35,7 @@ async function writeEnvFile(entries) {
 
 async function startAgent(character = DEFAULT_CHARACTER) {
     console.log(chalk.blue(`Starting agent for character: ${character}`));
-    const proc = spawn('pnpm', ['start', `--character=characters/${character}.character.json`, '--non-interactive'], { shell: true, "stdio": "inherit" });
+    const proc = spawn('npm', ['start', `--character=characters/${character}.character.json`, '--non-interactive'], { shell: true, "stdio": "inherit" });
     log(`proc=${JSON.stringify(proc)}`);
 
     // Wait for server to be ready

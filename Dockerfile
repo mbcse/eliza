@@ -1,8 +1,8 @@
 # Use a specific Node.js version for better reproducibility
 FROM node:23.3.0-slim AS builder
 
-# Install pnpm globally and install necessary build tools
-RUN npm install -g pnpm@9.4.0 && \
+# Install npm globally and install necessary build tools
+RUN npm install -g npm@10.5.0 && \
     apt-get update && \
     apt-get install -y git python3 make g++ && \
     apt-get clean && \
@@ -15,7 +15,7 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 WORKDIR /app
 
 # Copy package.json and other configuration files
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc turbo.json ./
+COPY package.json package-lock.json .npmrc turbo.json ./
 
 # Copy the rest of the application code
 COPY agent ./agent
@@ -24,15 +24,15 @@ COPY scripts ./scripts
 COPY characters ./characters
 
 # Install dependencies and build the project
-RUN pnpm install \
-    && pnpm build-docker \
-    && pnpm prune --prod
+RUN npm install \
+    && npm run build \
+    && npm prune --prod
 
 # Create a new stage for the final image
 FROM node:23.3.0-slim
 
 # Install runtime dependencies if needed
-RUN npm install -g pnpm@9.4.0 && \
+RUN npm install -g npm@10.5.0 && \
     apt-get update && \
     apt-get install -y git python3 && \
     apt-get clean && \
@@ -42,7 +42,7 @@ WORKDIR /app
 
 # Copy built artifacts and production dependencies from the builder stage
 COPY --from=builder /app/package.json ./
-COPY --from=builder /app/pnpm-workspace.yaml ./
+COPY --from=builder /app/package-lock.json ./
 COPY --from=builder /app/.npmrc ./
 COPY --from=builder /app/turbo.json ./
 COPY --from=builder /app/node_modules ./node_modules
@@ -52,4 +52,4 @@ COPY --from=builder /app/scripts ./scripts
 COPY --from=builder /app/characters ./characters
 
 # Set the command to run the application
-CMD ["pnpm", "start", "--non-interactive"]
+CMD ["npm", "start", "--", "--non-interactive"]

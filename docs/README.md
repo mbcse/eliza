@@ -30,7 +30,7 @@ _As seen powering [@DegenSpartanAI](https://x.com/degenspartanai) and [@MarcAInd
 **Prerequisites (MUST):**
 
 - [Node.js 23+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-- [pnpm](https://pnpm.io/installation)
+- [npm](https://npm.io/installation)
 
 ### Edit the .env file
 
@@ -40,13 +40,13 @@ _As seen powering [@DegenSpartanAI](https://x.com/degenspartanai) and [@MarcAInd
 ### Edit the character file
 
 - Check out the file `src/core/defaultCharacter.ts` - you can modify this
-- You can also load characters with the `pnpm start --characters="path/to/your/character.json"` and run multiple bots at the same time.
+- You can also load characters with the `npm start --characters="path/to/your/character.json"` and run multiple bots at the same time.
 
 After setting up the .env file and character file, you can start the bot with the following command:
 
 ```
-pnpm i
-pnpm start
+npm i
+npm start
 ```
 
 # Customising Eliza
@@ -74,7 +74,7 @@ You can run OpenAI models by setting the `XAI_MODEL` environment variable to `gp
 You may need to install Sharp. If you see an error when starting up, try installing it with the following command:
 
 ```
-pnpm install --include=optional sharp
+npm install --include=optional sharp
 ```
 
 # Environment Setup
@@ -136,7 +136,7 @@ TOGETHER_API_KEY=
 If you have an NVIDIA GPU, you can install CUDA to speed up local inference dramatically.
 
 ```
-pnpm install
+npm install
 npx --no node-llama-cpp source download --gpu cuda
 ```
 
@@ -161,15 +161,15 @@ For help with setting up your Discord Bot, check out here: https://discordjs.gui
 To run the test suite:
 
 ```bash
-pnpm test           # Run tests once
-pnpm test:watch    # Run tests in watch mode
+npm test           # Run tests once
+npm test:watch    # Run tests in watch mode
 ```
 
 For database-specific tests:
 
 ```bash
-pnpm test:sqlite   # Run tests with SQLite
-pnpm test:sqljs    # Run tests with SQL.js
+npm test:sqlite   # Run tests with SQLite
+npm test:sqljs    # Run tests with SQL.js
 ```
 
 Tests are written using Jest and can be found in `src/**/*.test.ts` files. The test environment is configured to:

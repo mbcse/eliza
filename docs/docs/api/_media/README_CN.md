@@ -25,12 +25,12 @@
 
 - [Node.js 22+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - Nodejs安装
-- [pnpm](https://pnpm.io/installation)
-- 使用pnpm
+- [npm](https://npm.io/installation)
+- 使用npm
 
 ### 编辑.env文件
 
-- - 将 .env.example 复制为 .env 并填写适当的值
+-   - 将 .env.example 复制为 .env 并填写适当的值
 - 编辑推特环境并输入你的推特账号和密码
 
 ### 编辑角色文件
@@ -41,8 +41,8 @@
 在完成账号和角色文件的配置后，输入以下命令行启动你的bot：
 
 ```
-pnpm i
-pnpm start
+npm i
+npm start
 ```
 
 # 自定义Eliza
@@ -66,7 +66,7 @@ pnpm start
 您可能需要安装 Sharp。如果在启动时看到错误，请尝试使用以下命令安装：
 
 ```
-pnpm install --include=optional sharp
+npm install --include=optional sharp
 ```
 
 # 环境设置
@@ -136,7 +136,7 @@ TOGETHER_API_KEY=
 如果你有高性能的英伟达显卡，你可以以下命令行通过CUDA来做本地加速
 
 ```
-pnpm install
+npm install
 npx --no node-llama-cpp source download --gpu cuda
 ```
 
@@ -158,15 +158,15 @@ npx --no node-llama-cpp source download --gpu cuda
 几种测试方法的命令行：
 
 ```bash
-pnpm test           # Run tests once
-pnpm test:watch    # Run tests in watch mode
+npm test           # Run tests once
+npm test:watch    # Run tests in watch mode
 ```
 
 对于数据库特定的测试：
 
 ```bash
-pnpm test:sqlite   # Run tests with SQLite
-pnpm test:sqljs    # Run tests with SQL.js
+npm test:sqlite   # Run tests with SQLite
+npm test:sqljs    # Run tests with SQL.js
 ```
 
 测试使用 Jest 编写，位于 src/\*_/_.test.ts 文件中。测试环境配置如下：

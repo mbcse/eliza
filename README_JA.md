@@ -4,43 +4,43 @@
 
 ## 機能
 
--   🛠 Discord、Twitter、Telegramのフル機能コネクタ
--   👥 マルチエージェントおよびルームサポート
--   📚 ドキュメントの簡単な取り込みと対話
--   💾 検索可能なメモリおよびドキュメントストア
--   🚀 高い拡張性 - 機能を拡張するための独自のアクションとクライアントを作成可能
--   ☁️ Llama、OpenAI、Anthropic、Groqなど、多くのモデルをサポート
--   📦 すぐに使える！
+- 🛠 Discord、Twitter、Telegramのフル機能コネクタ
+- 👥 マルチエージェントおよびルームサポート
+- 📚 ドキュメントの簡単な取り込みと対話
+- 💾 検索可能なメモリおよびドキュメントストア
+- 🚀 高い拡張性 - 機能を拡張するための独自のアクションとクライアントを作成可能
+- ☁️ Llama、OpenAI、Anthropic、Groqなど、多くのモデルをサポート
+- 📦 すぐに使える！
 
 ## 何に使えるのか？
 
--   🤖 チャットボット
--   🕵️ 自律エージェント
--   📈 ビジネスプロセスの処理
--   🎮 ビデオゲームのNPC
+- 🤖 チャットボット
+- 🕵️ 自律エージェント
+- 📈 ビジネスプロセスの処理
+- 🎮 ビデオゲームのNPC
 
 # 始め方
 
 **必須条件:**
 
--   [Node.js 23+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
--   [pnpm](https://pnpm.io/installation)
+- [Node.js 23+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [npm](https://npm.io/installation)
 
 ### .envファイルの編集
 
--   .env.exampleを.envにコピーし、適切な値を入力
--   TWITTER環境変数を編集して、ボットのユーザー名とパスワードを追加
+- .env.exampleを.envにコピーし、適切な値を入力
+- TWITTER環境変数を編集して、ボットのユーザー名とパスワードを追加
 
 ### キャラクターファイルの編集
 
--   `src/core/defaultCharacter.ts`ファイルを確認 - これを変更可能
--   `pnpm start --characters="path/to/your/character.json"`を使用してキャラクターをロードし、複数のボットを同時に実行可能
+- `src/core/defaultCharacter.ts`ファイルを確認 - これを変更可能
+- `npm start --characters="path/to/your/character.json"`を使用してキャラクターをロードし、複数のボットを同時に実行可能
 
 .envファイルとキャラクターファイルを設定した後、以下のコマンドでボットを起動可能:
 
 ```
-pnpm i
-pnpm start
+npm i
+npm start
 ```
 
 # Elizaのカスタマイズ
@@ -68,7 +68,7 @@ pnpm start
 Sharpをインストールする必要があるかもしれません。起動時にエラーが表示された場合は、以下のコマンドでインストールを試みてください:
 
 ```
-pnpm install --include=optional sharp
+npm install --include=optional sharp
 ```
 
 # 環境設定
@@ -138,7 +138,7 @@ TOGETHER_API_KEY=
 NVIDIA GPUを持っている場合、CUDAをインストールしてローカル推論を大幅に高速化可能
 
 ```
-pnpm install
+npm install
 npx --no node-llama-cpp source download --gpu cuda
 ```
 
@@ -161,22 +161,22 @@ Discordボットの設定に関するヘルプについては、こちらを参�
 テストスイートを実行するには:
 
 ```bash
-pnpm test           # テストを一度実行
-pnpm test:watch    # ウォッチモードでテストを実行
+npm test           # テストを一度実行
+npm test:watch    # ウォッチモードでテストを実行
 ```
 
 データベース固有のテストの場合:
 
 ```bash
-pnpm test:sqlite   # SQLiteでテストを実行
-pnpm test:sqljs    # SQL.jsでテストを実行
+npm test:sqlite   # SQLiteでテストを実行
+npm test:sqljs    # SQL.jsでテストを実行
 ```
 
 テストはJestを使用して記述されており、`src/**/*.test.ts`ファイルにあります。テスト環境は次のように構成されています:
 
--   `.env.test`から環境変数をロード
--   長時間実行されるテストのために2分のタイムアウトを使用
--   ESMモジュールをサポート
--   テストを順番に実行 (--runInBand)
+- `.env.test`から環境変数をロード
+- 長時間実行されるテストのために2分のタイムアウトを使用
+- ESMモジュールをサポート
+- テストを順番に実行 (--runInBand)
 
 新しいテストを作成するには、テストするコードの隣に`.test.ts`ファイルを追加します。

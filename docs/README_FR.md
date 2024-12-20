@@ -20,7 +20,7 @@ _Utilisée dans [@DegenSpartanAI](https://x.com/degenspartanai) et [@MarcAIndree
 
 - [Python 2.7+](https://www.python.org/downloads/)
 - [Node.js 22+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-- [pnpm](https://pnpm.io/installation)
+- [npm](https://npm.io/installation)
 
 ### Edit the .env file
 
@@ -32,20 +32,20 @@ _Utilisée dans [@DegenSpartanAI](https://x.com/degenspartanai) et [@MarcAIndree
 1. Ouvrir le document `src/core/defaultCharacter.ts` afin de modifier le personnage par défaut
 
 2. Pour ajouter des personnages personnalisés :
-   - Lancer la commande `pnpm start --characters="path/to/your/character.json"`
-   - Plusieurs fichiers personnages peuvent être ajoutés en même temps
+    - Lancer la commande `npm start --characters="path/to/your/character.json"`
+    - Plusieurs fichiers personnages peuvent être ajoutés en même temps
 
 ### Lancer Eliza
 
 Après avoir terminé la configuration et les fichiers personnage, lancer le bot en tapant la ligne de commande suivante:
 
 ```bash
-pnpm i
-pnpm build
-pnpm start
+npm i
+npm build
+npm start
 
 # Le projet étant régulièrement mis à jour, il vous faudra parfois le nettoyer avant de recommencer à travailler dessus
-pnpm clean
+npm clean
 ```
 
 # Personnaliser Eliza
@@ -74,7 +74,7 @@ Il vous faudra peut-être installer Sharp.
 Si il y a une erreur lors du lancement du bot, essayez d'installer Sharp comme ceci :
 
 ```
-pnpm install --include=optional sharp
+npm install --include=optional sharp
 ```
 
 # Paramètres
@@ -136,7 +136,7 @@ TOGETHER_API_KEY=
 Si vous avez une carte graphique NVIDIA, vous pouvez installer CUDA afin de grandement améliorer les performances :
 
 ```
-pnpm install
+npm install
 npx --no node-llama-cpp source download --gpu cuda
 ```
 
@@ -160,15 +160,15 @@ Pour savoir comment configurer votre bot Discord, vous pouvez consulter la docum
 Ligne de commande pour lancer les tests :
 
 ```bash
-pnpm test          # Lance les tests
-pnpm test:watch    # Lance les tests en mode observation
+npm test          # Lance les tests
+npm test:watch    # Lance les tests en mode observation
 ```
 
 Pour les tests spécifiques à la base de données :
 
 ```bash
-pnpm test:sqlite   # Lance les tests avec SQLite
-pnpm test:sqljs    # Lance les tests avec SQL.js
+npm test:sqlite   # Lance les tests avec SQLite
+npm test:sqljs    # Lance les tests avec SQL.js
 ```
 
 Les tests sont écrits en Jest et se trouvent ici : `src/**/*.test.ts`. L’environnement de test est configuré pour :

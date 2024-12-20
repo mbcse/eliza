@@ -13,7 +13,7 @@ Before you begin, ensure you have:
 ```bash
 # Required
 Node.js 23+
-pnpm
+npm
 Git
 
 # Optional but recommended
@@ -32,10 +32,10 @@ git clone https://github.com/ai16z/eliza.git
 cd eliza
 
 # Install dependencies
-pnpm install
+npm install
 
 # Install optional dependencies
-pnpm install --include=optional sharp
+npm install --include=optional sharp
 ```
 
 ### 2. Environment Configuration
@@ -74,41 +74,41 @@ npx --no node-llama-cpp source download --gpu cuda
 
 ```bash
 # Start with default character
-pnpm run dev
+npm run dev
 
 # Start with specific character
-pnpm run dev --characters="characters/my-character.json"
+npm run dev --characters="characters/my-character.json"
 
 # Start with multiple characters
-pnpm run dev --characters="characters/char1.json,characters/char2.json"
+npm run dev --characters="characters/char1.json,characters/char2.json"
 ```
 
 ### Development Commands
 
 ```bash
-pnpm run build          # Build the project
-pnpm run clean         # Clean build artifacts
-pnpm run dev           # Start development server
-pnpm run test          # Run tests
-pnpm run test:watch    # Run tests in watch mode
-pnpm run lint          # Lint code
+npm run build          # Build the project
+npm run clean         # Clean build artifacts
+npm run dev           # Start development server
+npm run test          # Run tests
+npm run test:watch    # Run tests in watch mode
+npm run lint          # Lint code
 ```
 
 ### Direct Client Chat UI
 
 ```
 # Open a terminal and Start with specific character
-pnpm run dev --characters="characters/my-character.json"
+npm run dev --characters="characters/my-character.json"
 ```
+
 ```
 # Open a 2nd terminal and start the client
-pnpm start:client
+npm start:client
 ```
 
 Look for the message:
 `  ➜  Local:   http://localhost:5173/`
-Click on that link or open a browser window to that location.  Once you do that you should see the chat interface connect with the system and you can start interacting with your character.
-
+Click on that link or open a browser window to that location. Once you do that you should see the chat interface connect with the system and you can start interacting with your character.
 
 ## Database Development
 
@@ -133,13 +133,13 @@ const db = new SqlJsDatabaseAdapter(new Database(":memory:"));
 
 ```bash
 # Create new migration
-pnpm run migration:create
+npm run migration:create
 
 # Run migrations
-pnpm run migration:up
+npm run migration:up
 
 # Rollback migrations
-pnpm run migration:down
+npm run migration:down
 ```
 
 ## Testing
@@ -148,17 +148,17 @@ pnpm run migration:down
 
 ```bash
 # Run all tests
-pnpm test
+npm test
 
 # Run specific test file
-pnpm test tests/specific.test.ts
+npm test tests/specific.test.ts
 
 # Run tests with coverage
-pnpm test:coverage
+npm test:coverage
 
 # Run database-specific tests
-pnpm test:sqlite
-pnpm test:sqljs
+npm test:sqlite
+npm test:sqljs
 ```
 
 ### Writing Tests
@@ -167,22 +167,22 @@ pnpm test:sqljs
 import { runAiTest } from "@ai16z/eliza/test_resources";
 
 describe("Feature Test", () => {
-  beforeEach(async () => {
-    // Setup test environment
-  });
-
-  it("should perform expected behavior", async () => {
-    const result = await runAiTest({
-      messages: [
-        {
-          user: "user1",
-          content: { text: "test message" },
-        },
-      ],
-      expected: "expected response",
+    beforeEach(async () => {
+        // Setup test environment
     });
-    expect(result.success).toBe(true);
-  });
+
+    it("should perform expected behavior", async () => {
+        const result = await runAiTest({
+            messages: [
+                {
+                    user: "user1",
+                    content: { text: "test message" },
+                },
+            ],
+            expected: "expected response",
+        });
+        expect(result.success).toBe(true);
+    });
 });
 ```
 
@@ -195,11 +195,11 @@ describe("Feature Test", () => {
 import { Plugin } from "@ai16z/eliza/types";
 
 export const myPlugin: Plugin = {
-  name: "my-plugin",
-  description: "My custom plugin",
-  actions: [],
-  evaluators: [],
-  providers: [],
+    name: "my-plugin",
+    description: "My custom plugin",
+    actions: [],
+    evaluators: [],
+    providers: [],
 };
 ```
 
@@ -208,16 +208,16 @@ export const myPlugin: Plugin = {
 ```typescript
 // plugins/my-plugin/src/actions/myAction.ts
 export const myAction: Action = {
-  name: "MY_ACTION",
-  similes: ["SIMILAR_ACTION"],
-  validate: async (runtime: IAgentRuntime, message: Memory) => {
-    return true;
-  },
-  handler: async (runtime: IAgentRuntime, message: Memory) => {
-    // Implementation
-    return true;
-  },
-  examples: [],
+    name: "MY_ACTION",
+    similes: ["SIMILAR_ACTION"],
+    validate: async (runtime: IAgentRuntime, message: Memory) => {
+        return true;
+    },
+    handler: async (runtime: IAgentRuntime, message: Memory) => {
+        // Implementation
+        return true;
+    },
+    examples: [],
 };
 ```
 
@@ -229,20 +229,20 @@ Create `.vscode/launch.json`:
 
 ```json
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Debug Eliza",
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/src/index.ts",
-      "runtimeArgs": ["-r", "ts-node/register"],
-      "env": {
-        "DEBUG": "eliza:*"
-      }
-    }
-  ]
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Eliza",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/src/index.ts",
+            "runtimeArgs": ["-r", "ts-node/register"],
+            "env": {
+                "DEBUG": "eliza:*"
+            }
+        }
+    ]
 }
 ```
 
@@ -261,9 +261,9 @@ DEBUG=eliza:*
 const debug = require("debug")("eliza:dev");
 
 debug("Operation details: %O", {
-  operation: "functionName",
-  params: parameters,
-  result: result,
+    operation: "functionName",
+    params: parameters,
+    result: result,
 });
 ```
 
@@ -271,7 +271,7 @@ debug("Operation details: %O", {
 
 ```bash
 # Increase Node.js memory for development
-NODE_OPTIONS="--max-old-space-size=8192" pnpm run dev
+NODE_OPTIONS="--max-old-space-size=8192" npm run dev
 ```
 
 ## Common Development Tasks
@@ -280,13 +280,13 @@ NODE_OPTIONS="--max-old-space-size=8192" pnpm run dev
 
 ```json
 {
-  "name": "DevBot",
-  "description": "Development testing bot",
-  "modelProvider": "openai",
-  "settings": {
-    "debug": true,
-    "logLevel": "debug"
-  }
+    "name": "DevBot",
+    "description": "Development testing bot",
+    "modelProvider": "openai",
+    "settings": {
+        "debug": true,
+        "logLevel": "debug"
+    }
 }
 ```
 
@@ -294,15 +294,15 @@ NODE_OPTIONS="--max-old-space-size=8192" pnpm run dev
 
 ```typescript
 class CustomService extends Service {
-  static serviceType = ServiceType.CUSTOM;
+    static serviceType = ServiceType.CUSTOM;
 
-  async initialize() {
-    // Setup code
-  }
+    async initialize() {
+        // Setup code
+    }
 
-  async process(input: any): Promise<any> {
-    // Service logic
-  }
+    async process(input: any): Promise<any> {
+        // Service logic
+    }
 }
 ```
 
@@ -311,20 +311,20 @@ class CustomService extends Service {
 ```typescript
 // Local model configuration
 const localModel = {
-  modelProvider: "llamalocal",
-  settings: {
-    modelPath: "./models/llama-7b.gguf",
-    contextSize: 8192,
-  },
+    modelProvider: "llamalocal",
+    settings: {
+        modelPath: "./models/llama-7b.gguf",
+        contextSize: 8192,
+    },
 };
 
 // Cloud model configuration
 const cloudModel = {
-  modelProvider: "openai",
-  settings: {
-    model: "gpt-4o-mini",
-    temperature: 0.7,
-  },
+    modelProvider: "openai",
+    settings: {
+        model: "gpt-4o-mini",
+        temperature: 0.7,
+    },
 };
 ```
 
@@ -345,14 +345,14 @@ CUDA_PATH=/usr/local/cuda  # Windows: C:\Program Files\NVIDIA GPU Computing Tool
 
 ```typescript
 class MemoryManager {
-  private cache = new Map();
-  private maxSize = 1000;
+    private cache = new Map();
+    private maxSize = 1000;
 
-  async cleanup() {
-    if (this.cache.size > this.maxSize) {
-      // Implement cleanup logic
+    async cleanup() {
+        if (this.cache.size > this.maxSize) {
+            // Implement cleanup logic
+        }
     }
-  }
 }
 ```
 
@@ -372,7 +372,7 @@ rm -rf ./models/*
 
 ```bash
 # Test database connection
-pnpm run test:db-connection
+npm run test:db-connection
 ```
 
 3. Memory Issues
@@ -386,33 +386,33 @@ node --trace-gc index.js
 
 ```bash
 # Generate TypeScript documentation
-pnpm run docs:generate
+npm run docs:generate
 
 # Check for circular dependencies
-pnpm run madge
+npm run madge
 
 # Analyze bundle size
-pnpm run analyze
+npm run analyze
 ```
 
 ## Best Practices
 
 1. Code Organization
 
-   - Place custom actions in `custom_actions/`
-   - Keep character files in `characters/`
-   - Store test data in `tests/fixtures/`
+    - Place custom actions in `custom_actions/`
+    - Keep character files in `characters/`
+    - Store test data in `tests/fixtures/`
 
 2. Testing Strategy
 
-   - Write unit tests for new features
-   - Use integration tests for plugins
-   - Test with multiple model providers
+    - Write unit tests for new features
+    - Use integration tests for plugins
+    - Test with multiple model providers
 
 3. Git Workflow
-   - Create feature branches
-   - Follow conventional commits
-   - Keep PRs focused
+    - Create feature branches
+    - Follow conventional commits
+    - Keep PRs focused
 
 ## Additional Tools
 

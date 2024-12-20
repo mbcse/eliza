@@ -36,9 +36,9 @@ cd "$PROJECT_DIR"
 
 cp .env.example .env
 
-pnpm install -r
+npm install -r
 
-pnpm build
+npm build
 
 # Create temp file and ensure cleanup
 OUTFILE="$(mktemp)"
@@ -51,7 +51,7 @@ INTERVAL=5   # Represent 0.5 seconds as 5 tenths of a second
 TIMER=0
 
 # Start the application and capture logs in the background
-pnpm start --character=characters/trump.character.json > "$OUTFILE" 2>&1 &
+npm start --character=characters/trump.character.json > "$OUTFILE" 2>&1 &
 
 APP_PID=$!  # Capture the PID of the background process
 
@@ -60,7 +60,7 @@ APP_PID=$!  # Capture the PID of the background process
   while true; do
     if (( TIMER >= TIMEOUT )); then
         >&2 echo "ERROR: Timeout waiting for application to start after $((TIMEOUT / 10)) seconds"
-        kill $APP_PID  # Terminate the pnpm process
+        kill $APP_PID  # Terminate the npm process
         exit 1
     fi
 
@@ -87,7 +87,7 @@ echo "----- OUTPUT END -----"
 
 # Check the application exit code
 if [[ $RESULT -ne 0 ]]; then
-    echo "Error: 'pnpm start' command exited with an error (code: $RESULT)"
+    echo "Error: 'npm start' command exited with an error (code: $RESULT)"
     exit 1
 fi
 

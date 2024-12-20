@@ -6,36 +6,36 @@
 
 <div align="center">
 
-  📖 [Tài liệu](https://ai16z.github.io/eliza/) | 🎯 [Ví dụ](https://github.com/thejoven/awesome-eliza)
+📖 [Tài liệu](https://ai16z.github.io/eliza/) | 🎯 [Ví dụ](https://github.com/thejoven/awesome-eliza)
 
 </div>
 
 ## ✨ Tính năng
 
--   🛠️ Phương thức kết nối đầy đủ tính năng với Discord, Twitter và Telegram
--   🔗 Hỗ trợ mọi mô hình ngôn ngữ lớn (Llama, Grok, OpenAI, Anthropic, v.v.)
--   👥 Hỗ trợ nhiều tác nhân và phòng trò chuyện
--   📚 Dễ dàng tiếp nhận và tương tác với tài liệu của bạn
--   💾 Bộ nhớ và kho lưu trữ tài liệu có thể truy xuất
--   🚀 Có khả năng mở rộng cao - tạo hành động và ứng dụng của riêng bạn
--   ☁️ Hỗ trợ nhiều mô hình cùng lúc (Llama, OpenAI, Anthropic, Groq, v.v.)
--   📦 Đơn giản là nó hoạt động!
+- 🛠️ Phương thức kết nối đầy đủ tính năng với Discord, Twitter và Telegram
+- 🔗 Hỗ trợ mọi mô hình ngôn ngữ lớn (Llama, Grok, OpenAI, Anthropic, v.v.)
+- 👥 Hỗ trợ nhiều tác nhân và phòng trò chuyện
+- 📚 Dễ dàng tiếp nhận và tương tác với tài liệu của bạn
+- 💾 Bộ nhớ và kho lưu trữ tài liệu có thể truy xuất
+- 🚀 Có khả năng mở rộng cao - tạo hành động và ứng dụng của riêng bạn
+- ☁️ Hỗ trợ nhiều mô hình cùng lúc (Llama, OpenAI, Anthropic, Groq, v.v.)
+- 📦 Đơn giản là nó hoạt động!
 
 ## 🎯 Các trường hợp sử dụng
 
--   🤖 Chatbots
--   🕵️ Các tác nhân tự động
--   📈 Xử lý các mô hình kinh tế
--   🎮 NPCs trong các trò chơi điện tử
--   🧠 Giao dịch (Trading)
+- 🤖 Chatbots
+- 🕵️ Các tác nhân tự động
+- 📈 Xử lý các mô hình kinh tế
+- 🎮 NPCs trong các trò chơi điện tử
+- 🧠 Giao dịch (Trading)
 
 ## 🚀 Bắt đầu
 
 ### Điều kiện tiên quyết
 
--   [Python 2.7+](https://www.python.org/downloads/)
--   [Node.js 23+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
--   [pnpm](https://pnpm.io/installation)
+- [Python 2.7+](https://www.python.org/downloads/)
+- [Node.js 23+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [npm](https://npm.io/installation)
 
 > **Chú ý cho người dùng Windows:** [WSL 2](https://learn.microsoft.com/de-de/windows/wsl/install-manual) là bắt buộc.
 
@@ -46,7 +46,7 @@ git clone https://github.com/ai16z/eliza-starter.git
 
 cp .env.example .env
 
-pnpm i && pnpm start
+npm i && npm start
 ```
 
 Sau đó hãy đọc [Tài liệu](https://ai16z.github.io/eliza/), để học cách để tùy chỉnh Eliza của bạn.
@@ -89,7 +89,7 @@ sh scripts/start.sh
 1. Mở `agent/src/character.ts`, để chỉnh sửa tính cách mặc định. Bỏ chú thích và chỉnh sửa.
 
 2. Để chạy các tính cách tùy chỉnh:
-    - Sử dụng `pnpm start --characters="path/to/your/character.json"`
+    - Sử dụng `npm start --characters="path/to/your/character.json"`
     - Nhiều tính cách có thể được chạy cùng lúc với nhau
 3. Kết nối với X (Twitter)
     - Thay đổi `"clients": []` thành `"clients": ["twitter"]` ở trong tập tính cách (character) để kết nối với X.
@@ -97,12 +97,12 @@ sh scripts/start.sh
 ### Bắt đầu Eliza theo cách thủ công
 
 ```bash
-pnpm i
-pnpm build
-pnpm start
+npm i
+npm build
+npm start
 
 # Dự án cải tiến rất nhanh, đôi khi bạn cần phải dọn dẹp dự án nếu bạn quay lại dự án
-pnpm clean
+npm clean
 ```
 
 #### Yêu cầu bổ sung
@@ -110,13 +110,13 @@ pnpm clean
 Bạn có thể cần cài đặt Sharp. Nếu bạn thấy lỗi khi khởi động, hãy thử cài đặt bằng lệnh sau:
 
 ```
-pnpm install --include=optional sharp
+npm install --include=optional sharp
 ```
 
 ### Cộng đồng & Liên hệ
 
--   [GitHub Issues](https://github.com/ai16z/eliza/issues). Phù hợp nhất cho: các lỗi bạn gặp phải khi sử dụng Eliza và các đề xuất tính năng.
--   [Discord](https://discord.gg/ai16z). Phù hợp nhất cho: chia sẻ ứng dụng của bạn và giao lưu với cộng đồng.
+- [GitHub Issues](https://github.com/ai16z/eliza/issues). Phù hợp nhất cho: các lỗi bạn gặp phải khi sử dụng Eliza và các đề xuất tính năng.
+- [Discord](https://discord.gg/ai16z). Phù hợp nhất cho: chia sẻ ứng dụng của bạn và giao lưu với cộng đồng.
 
 ## Người đóng góp
 

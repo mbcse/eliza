@@ -19,7 +19,7 @@ const credentials = {
 (async () => {
     try {
         console.log(`Tweets will be saved to: ${TWEETS_FILE}`);
-        
+
         // Create a new instance of the Scraper
         const scraper = new Scraper();
 

@@ -4,10 +4,10 @@ This package contains a test suite for evaluating functionalities using **Jest**
 
 ## Prerequisites
 
-1. **pnpm**: Ensure you have `pnpm` installed. If not, you can install it globally using:
+1. **npm**: Ensure you have `npm` installed. If not, you can install it globally using:
 
     ```bash
-    npm install -g pnpm
+    npm install -g npm
     ```
 
 2. **Environment Variables - NOT REQUIRED** : Set up a `.env` file in the project root (eliza) with the necessary environment variables. Copy .env.example file and add required variables.
@@ -22,7 +22,7 @@ This package contains a test suite for evaluating functionalities using **Jest**
 
 2. Install dependencies:
     ```bash
-    pnpm install
+    npm install
     ```
 
 ## Running Tests
@@ -30,7 +30,7 @@ This package contains a test suite for evaluating functionalities using **Jest**
 Run all tests using:
 
 ```bash
-pnpm test
+npm test
 ```
 
 The test results will be displayed in the terminal.

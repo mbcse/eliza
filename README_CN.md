@@ -4,45 +4,45 @@
 
 ## 功能
 
--   🛠 支持discord/推特/telegram连接
--   👥 支持多模态agent
--   📚 简单的导入文档并与文档交互
--   💾 可检索的内存和文档存储
--   🚀 高可拓展性，你可以自定义客户端和行为来进行功能拓展
--   ☁️ 多模型支持，包括Llama、OpenAI、Grok、Anthropic等
--   📦 简单好用
+- 🛠 支持discord/推特/telegram连接
+- 👥 支持多模态agent
+- 📚 简单的导入文档并与文档交互
+- 💾 可检索的内存和文档存储
+- 🚀 高可拓展性，你可以自定义客户端和行为来进行功能拓展
+- ☁️ 多模型支持，包括Llama、OpenAI、Grok、Anthropic等
+- 📦 简单好用
 
 你可以用Eliza做什么？
 
--   🤖 聊天机器人
--   🕵️ 自主Agents
--   📈 业务流程自动化处理
--   🎮 游戏NPC
+- 🤖 聊天机器人
+- 🕵️ 自主Agents
+- 📈 业务流程自动化处理
+- 🎮 游戏NPC
 
 # 开始使用
 
 **前置要求（必须）:**
 
--   [Node.js 23+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
--   Nodejs安装
--   [pnpm](https://pnpm.io/installation)
--   使用pnpm
+- [Node.js 23+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- Nodejs安装
+- [npm](https://npm.io/installation)
+- 使用npm
 
 ### 编辑.env文件
 
--   -   将 .env.example 复制为 .env 并填写适当的值
--   编辑推特环境并输入你的推特账号和密码
+-   - 将 .env.example 复制为 .env 并填写适当的值
+- 编辑推特环境并输入你的推特账号和密码
 
 ### 编辑角色文件
 
--   查看文件 `src/core/defaultCharacter.ts` - 您可以修改它
--   您也可以使用 `node --loader ts-node/esm src/index.ts --characters="path/to/your/character.json"` 加载角色并同时运行多个机器人。
+- 查看文件 `src/core/defaultCharacter.ts` - 您可以修改它
+- 您也可以使用 `node --loader ts-node/esm src/index.ts --characters="path/to/your/character.json"` 加载角色并同时运行多个机器人。
 
 在完成账号和角色文件的配置后，输入以下命令行启动你的bot：
 
 ```
-pnpm i
-pnpm start
+npm i
+npm start
 ```
 
 # 自定义Eliza
@@ -66,7 +66,7 @@ pnpm start
 您可能需要安装 Sharp。如果在启动时看到错误，请尝试使用以下命令安装：
 
 ```
-pnpm install --include=optional sharp
+npm install --include=optional sharp
 ```
 
 # 环境设置
@@ -136,7 +136,7 @@ TOGETHER_API_KEY=
 如果你有高性能的英伟达显卡，你可以以下命令行通过CUDA来做本地加速
 
 ```
-pnpm install
+npm install
 npx --no node-llama-cpp source download --gpu cuda
 ```
 
@@ -158,22 +158,22 @@ npx --no node-llama-cpp source download --gpu cuda
 几种测试方法的命令行：
 
 ```bash
-pnpm test           # Run tests once
-pnpm test:watch    # Run tests in watch mode
+npm test           # Run tests once
+npm test:watch    # Run tests in watch mode
 ```
 
 对于数据库特定的测试：
 
 ```bash
-pnpm test:sqlite   # Run tests with SQLite
-pnpm test:sqljs    # Run tests with SQL.js
+npm test:sqlite   # Run tests with SQLite
+npm test:sqljs    # Run tests with SQL.js
 ```
 
 测试使用 Jest 编写，位于 src/\*_/_.test.ts 文件中。测试环境配置如下：
 
--   从 .env.test 加载环境变量
--   使用 2 分钟的超时时间来运行长时间运行的测试
--   支持 ESM 模块
--   按顺序运行测试 (--runInBand)
+- 从 .env.test 加载环境变量
+- 使用 2 分钟的超时时间来运行长时间运行的测试
+- 支持 ESM 模块
+- 按顺序运行测试 (--runInBand)
 
 要创建新测试，请在要测试的代码旁边添加一个 .test.ts 文件。

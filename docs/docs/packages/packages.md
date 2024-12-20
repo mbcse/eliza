@@ -39,13 +39,13 @@ graph TD
 
 ```
 # Install core package
-pnpm add @ai16z/core
+npm add @ai16z/core
 
 # Install specific adapters
-pnpm add @ai16z/adapter-postgres
-pnpm add @ai16z/adapter-sqlite
+npm add @ai16z/adapter-postgres
+npm add @ai16z/adapter-sqlite
 
 # Install clients
-pnpm add @ai16z/client-discord
-pnpm add @ai16z/client-Telegram
+npm add @ai16z/client-discord
+npm add @ai16z/client-Telegram
 ```
