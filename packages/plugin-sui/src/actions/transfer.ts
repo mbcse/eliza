@@ -116,11 +116,12 @@ export default {
             template: transferTemplate,
         });
 
+        // @ts-ignore
         // Generate transfer content with the schema
         const content = await generateObject({
             runtime,
             context: transferContext,
-            schema: transferSchema,
+            schema: transferSchema as z.ZodType<any>,
             modelClass: ModelClass.SMALL,
         });
 

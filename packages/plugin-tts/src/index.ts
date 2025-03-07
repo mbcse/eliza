@@ -131,7 +131,7 @@ const TTSGeneration: Action = {
                         fs.mkdirSync(directoryPath, { recursive: true });
                     }
 
-                    fs.writeFileSync(cachedFile, Buffer.from(arrayBuffer));
+                    fs.writeFileSync(cachedFile, new Uint8Array(arrayBuffer));
                     elizaLogger.debug("Audio Duration:", result.data.audio.duration);
                 }
 

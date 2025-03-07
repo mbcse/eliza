@@ -30,7 +30,7 @@ export function saveBase64Image(base64Data: string, filename: string): string {
     const filepath = path.join(imageDir, `${filename}.png`);
 
     // Save the file
-    fs.writeFileSync(filepath, imageBuffer);
+    fs.writeFileSync(filepath, new Uint8Array(imageBuffer));
 
     return filepath;
 }
@@ -57,7 +57,7 @@ export async function saveHeuristImage(
     const filepath = path.join(imageDir, `${filename}.png`);
 
     // Save the file
-    fs.writeFileSync(filepath, imageBuffer);
+    fs.writeFileSync(filepath, new Uint8Array(imageBuffer));
 
     return filepath;
 }

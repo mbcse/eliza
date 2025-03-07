@@ -166,7 +166,7 @@ const videoGeneration: Action = {
                 const videoFileName = `content_cache/generated_video_${Date.now()}.mp4`;
 
                 // Save video file
-                fs.writeFileSync(videoFileName, Buffer.from(arrayBuffer));
+                fs.writeFileSync(videoFileName, new Uint8Array(arrayBuffer));  
 
                 callback(
                     {

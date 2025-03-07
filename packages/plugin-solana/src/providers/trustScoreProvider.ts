@@ -12,7 +12,7 @@ import {
     type TokenRecommendation,
     type TradePerformance,
     TrustScoreDatabase,
-} from "@elizaos/plugin-trustdb";
+} from "@elizaos-plugins/plugin-trustdb";   
 import { getAssociatedTokenAddress } from "@solana/spl-token";
 import { Connection, PublicKey } from "@solana/web3.js";
 import { v4 as uuidv4 } from "uuid";

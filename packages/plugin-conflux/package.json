@@ -20,7 +20,8 @@
     ],
     "dependencies": {
         "@elizaos/core": "workspace:^",
-        "cive": "0.7.1"
+        "cive": "0.7.1",
+        "tsup": "8.3.5"
     },
     "devDependencies": {
         "@biomejs/biome": "1.9.4",

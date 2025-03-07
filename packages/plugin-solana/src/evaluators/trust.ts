@@ -12,7 +12,7 @@ import {
     MemoryManager,
     ModelClass,
 } from "@elizaos/core";
-import { TrustScoreDatabase } from "@elizaos/plugin-trustdb";
+import { TrustScoreDatabase } from "@elizaos-plugins/plugin-trustdb";
 import { Connection } from "@solana/web3.js";
 import { getWalletKey } from "../keypairUtils.ts";
 import { TokenProvider } from "../providers/token.ts";

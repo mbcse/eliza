@@ -1,8 +1,8 @@
 import {
     type TEEMode,
     RemoteAttestationProvider as TdxAttestationProvider,
-} from "@elizaos/plugin-tee";
-import { SgxAttestationProvider } from "@elizaos/plugin-sgx";
+} from "@elizaos-plugins/plugin-tee";
+import { SgxAttestationProvider } from "@elizaos-plugins/plugin-sgx";
 import { TeeType, type TeeLogDAO, type TeeAgent, type TeeLog, type TeeLogQuery, type PageQuery } from "../types";
 import elliptic from "elliptic";
 import { v4 } from "uuid";

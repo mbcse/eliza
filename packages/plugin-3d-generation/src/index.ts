@@ -124,7 +124,7 @@ const ThreeDGeneration: Action = {
                 }
 
                 // Save 3D file
-                fs.writeFileSync(ThreeDFileName, Buffer.from(arrayBuffer));
+                fs.writeFileSync(ThreeDFileName, new Uint8Array(arrayBuffer));
 
                 callback(
                     {

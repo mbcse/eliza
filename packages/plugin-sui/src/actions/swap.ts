@@ -94,11 +94,12 @@ export default {
             template: swapTemplate,
         });
 
+        // @ts-ignore
         // Generate transfer content with the schema
         const content = await generateObject({
             runtime,
             context: swapContext,
-            schema: swapSchema,
+            schema: swapSchema as z.ZodType<any>,
             modelClass: ModelClass.SMALL,
         });
 

@@ -5,4 +5,6 @@ const twitterPlugin = {
     description: "Twitter client",
     clients: [TwitterClientInterface],
 };
+
+export { TwitterClientInterface };
 export default twitterPlugin;

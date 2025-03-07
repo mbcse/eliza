@@ -4,7 +4,7 @@ import type {
     Chain
 } from "viem";
 import * as viemChains from "viem/chains";
-import { WalletProvider, initWalletProvider } from "@elizaos/plugin-evm";
+import { WalletProvider, initWalletProvider } from "@elizaos-plugins/plugin-evm";   
 import NodeCache from "node-cache";
 
 import {

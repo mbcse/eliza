@@ -26,9 +26,16 @@ class TakoManager {
         // Mentions and interactions
         this.interaction = new TakoInteractionClient(this.client, runtime);
     }
+
+    // Add stop method to implement ClientInstance interface
+    async stop() {
+        elizaLogger.warn("Tako client does not support stopping yet");
+
+    }
 }
 
 export const TakoClientInterface: Client = {
+    name: "Tako",
     async start(runtime: IAgentRuntime) {
         const takoConfig: TakoConfig = await validateTakoConfig(runtime);
 
@@ -56,10 +63,6 @@ export const TakoClientInterface: Client = {
         }
 
         return manager;
-    },
-
-    async stop(_runtime: IAgentRuntime) {
-        elizaLogger.warn("Tako client does not support stopping yet");
     },
 };
 

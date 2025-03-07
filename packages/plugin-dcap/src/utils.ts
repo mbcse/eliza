@@ -1,5 +1,5 @@
 import type { IAgentRuntime } from "@elizaos/core";
-import { TEEMode } from "@elizaos/plugin-tee";
+import { TEEMode } from "@elizaos-plugins/plugin-tee";
 import { DCAPMode } from "./types";
 
 export const is0xString = (s: string) =>

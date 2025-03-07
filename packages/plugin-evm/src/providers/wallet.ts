@@ -27,7 +27,7 @@ import type {
     TestClient,
 } from "viem";
 import * as viemChains from "viem/chains";
-import { DeriveKeyProvider, TEEMode } from "@elizaos/plugin-tee";
+import { DeriveKeyProvider, TEEMode } from "@elizaos-plugins/plugin-tee";   
 import NodeCache from "node-cache";
 import * as path from "node:path";
 

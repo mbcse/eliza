@@ -9,7 +9,8 @@
     "@elizaos-plugins/plugin-tee": "workspace:*",
     "@elizaos-plugins/plugin-trustdb": "workspace:*",
     "@elizaos/core": "workspace:^",
-    "axios": "^1.7.9"
+    "axios": "^1.7.9",
+    "tsup": "8.3.5"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4"

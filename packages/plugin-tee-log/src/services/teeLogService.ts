@@ -1,5 +1,5 @@
 import { type IAgentRuntime, Service, ServiceType, type ITeeLogService } from "@elizaos/core";
-import { TEEMode } from "@elizaos/plugin-tee";
+import { TEEMode } from "@elizaos-plugins/plugin-tee";
 import { SqliteTeeLogDAO } from "../adapters/sqliteDAO";
 import { TeeType, type TeeLogDAO, type TeeAgent, type TeeLog, type TeeLogQuery, type PageQuery } from "../types";
 import { TeeLogManager } from "./teeLogManager";
@@ -12,7 +12,7 @@ export class TeeLogService extends Service implements ITeeLogService {
     private initialized = false;
     private enableTeeLog = false;
     private teeType: TeeType;
-    private teeMode: TEEMode = TEEMode.OFF; // Only used for plugin-tee with TDX dstack
+    private teeMode: typeof TEEMode = TEEMode.OFF; // Only used for plugin-tee with TDX dstack
 
     private teeLogDAO: TeeLogDAO;
     private teeLogManager: TeeLogManager;
