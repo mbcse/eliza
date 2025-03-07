@@ -43,7 +43,7 @@ twitter_cookies.json
 timeline_cache.json
 
 *.sqlite
-
+characters
 # Character configurations
 characters/**/secrets.json
 characters/**/*.env

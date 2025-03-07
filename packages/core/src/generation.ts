@@ -2240,6 +2240,7 @@ async function handleOpenAI({
         getCloudflareGatewayBaseURL(runtime, "openai") ||
         models.openai.endpoint;
     const openai = createOpenAI({ apiKey, baseURL });
+    // @ts-ignore
     return await aiGenerateObject({
         model: openai.languageModel(model),
         schema,

@@ -26,6 +26,7 @@ import { formatPosts } from "./posts.ts";
 import { getProviders } from "./providers.ts";
 import { RAGKnowledgeManager } from "./ragknowledge.ts";
 import settings from "./settings.ts";
+import _ from "lodash";
 import {
     type Character,
     type Goal,
@@ -405,10 +406,12 @@ export class AgentRuntime implements IAgentRuntime {
 
         this.token = opts.token;
 
-        this.plugins = [
+        const allPlugins = [
             ...(opts.character?.plugins ?? []),
             ...(opts.plugins ?? []),
         ];
+
+        this.plugins = _.uniqBy(allPlugins, "name");
 
         this.plugins.forEach((plugin) => {
             plugin.actions?.forEach((action) => {

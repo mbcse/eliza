@@ -47,6 +47,7 @@ import {
     settings,
     stringToUuid,
     validateCharacterConfig,
+    Plugin
 } from "@elizaos/core";
 import { zgPlugin } from "@elizaos/plugin-0g";
 import { footballPlugin } from "@elizaos/plugin-football";
@@ -488,20 +489,53 @@ export async function loadCharacters(
 }
 
 async function handlePluginImporting(plugins: string[]) {
+
+    function isPlugin(value: any): value is Plugin {
+        return (
+            typeof value === "object" &&
+            value !== null &&
+            typeof value.name === "string" &&
+            typeof value.description === "string" &&
+            (value.actions === undefined || Array.isArray(value.actions)) &&
+            (value.providers === undefined || Array.isArray(value.providers)) &&
+            (value.evaluators === undefined ||
+                Array.isArray(value.evaluators)) &&
+            (value.services === undefined || Array.isArray(value.services)) &&
+            (value.clients === undefined || Array.isArray(value.clients))
+        );
+    }
+
+
     if (plugins.length > 0) {
         elizaLogger.info("Plugins are: ", plugins);
         const importedPlugins = await Promise.all(
             plugins.map(async (plugin) => {
                 try {
                     const importedPlugin = await import(plugin);
-                    const functionName =
-                        plugin
-                            .replace("@elizaos/plugin-", "")
-                            .replace(/-./g, (x) => x[1].toUpperCase()) +
-                        "Plugin"; // Assumes plugin function is camelCased with Plugin suffix
-                    return (
-                        importedPlugin.default || importedPlugin[functionName]
-                    );
+                    // const functionName =
+                    //     plugin
+                    //         .replace("@elizaos/plugin-", "")
+                    //         .replace(/-./g, (x) => x[1].toUpperCase()) +
+                    //     "Plugin"; // Assumes plugin function is camelCased with Plugin suffix
+                    // return (
+                    //     importedPlugin.default || importedPlugin[functionName]
+                    // );
+
+                    // Check if there's a default export
+                    if (importedPlugin.default) {
+                        return importedPlugin.default;
+                    }
+
+                    // Check other exports for potential plugins
+                    const possiblePlugins = [];
+                    for (const [key, value] of Object.entries(importedPlugin)) {
+                        // Check if the export matches the plugin type
+                        if (isPlugin(value)) {
+                            possiblePlugins.push(value);
+                        }
+                    }
+
+                    return possiblePlugins.length > 0 ? possiblePlugins : null;
                 } catch (importError) {
                     elizaLogger.error(
                         `Failed to import plugin: ${plugin}`,
@@ -511,7 +545,8 @@ async function handlePluginImporting(plugins: string[]) {
                 }
             })
         );
-        return importedPlugins;
+        return importedPlugins.flat()
+        .filter(Boolean);;
     } else {
         return [];
     }
